@@ -1,4 +1,8 @@
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<cmath>
+
 using namespace std;
 
 #define INF ((unsigned) ~0)
@@ -41,14 +45,52 @@ void try5(){
 }
 
 
-int main(){
-	int K;
-	cin>>K;
-	int a[K] = {};
-	vector<int> b;
-
-	for(int i = 0;i<K;i++){
-		cin>>a[i];
+void gen_subset(int k, vector<int>& in, vector<int>& out){
+	if(k == in.size()+1){
+		if(out.size()==0){printf("{empty}");}
+		else{
+			for (auto k:out){
+			printf("%d ", k);
+			}		
+		}
+		printf("\n");
+	} else{
+		out.push_back(in[k-1]);
+		gen_subset(k+1, in, out);
+		out.pop_back();
+		gen_subset(k+1, in, out);
 	}
+}
+
+void gen_permutation(vector<int>& in, vector<int>& permutation, bool* chosen){
+	if(permutation.size() == in.size()){
+		for(auto a:permutation){
+			printf("%d ", a);
+		}
+		printf("\n");
+	}else{
+		for(int i = 1; i<= in.size(); i++){
+			if(chosen[i]) continue;
+			chosen[i] = true;
+			permutation.push_back(in[i-1]);
+			gen_permutation(in, permutation, chosen);
+			chosen[i] = false;
+			permutation.pop_back();
+		}
+	}
+}
+
+
+int main(){
+	// vector<int> a = {1,2,3};
+	// vector<int> b;
+	// bool chosen[4]{0};
+	// gen_permutation(a,b,chosen);
+	int a = 1<<10;
+
+	cout<<a<<'\n';
+	
+
+	// gen_subset(1, a, b);
 }
 
