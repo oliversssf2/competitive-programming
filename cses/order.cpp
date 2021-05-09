@@ -13,8 +13,8 @@ int whereis(int k) {
     // cout<<l;
     // cout<<k;
     int a = 1;
-    for(int i=0; i<n; i++)
-        for(int j=0; j<n;j++){
+    for(int i=0; i<l; i++)
+        for(int j=0; j<l;j++){
             if(smaller(i,j)){
                 a++;
                 // cout<<a<<endl;
