@@ -13,10 +13,10 @@ int smaller(int i, int j) {
 int main() {
     int n, m, i, k;
     scanf ("%d %d", &n, &m);
-    // init(n);
     for (int i=0; i<n; i++) {
         scanf ("%d", &ARRAY[i]);
     }
+    init(n);
     for (i=0; i<m; i++) {
         scanf ("%d", &k);
         printf("User function returns: %d\n", whereis(k));

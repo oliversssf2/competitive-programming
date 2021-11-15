@@ -1,9 +1,9 @@
 #include<iostream>
+using namespace std;
 
 int main(){
-    int a, b;
-    std::cin >> a >> b;
-    int c {a+b};
-    std::cout << c <<"\n";
-
+    int a;cin>>a;
+    if(a>=10&&a<100) cout<<a<<" 是兩位數";
+    else cout<<a<<" 不是兩位數";
+    return 0;
 }
